@@ -1,0 +1,32 @@
+//Función para añadir puntos a un usuario. Crea objeto subtipo 'gamepoint'.
+function gamepoints_add($user_guid, $points, $entity_guid = null, $group_guid = null, $subgroup = false, $description = null)
+
+$user_guid = guid del usuario al que se le asignan los puntos
+$points = nº de puntos
+$entity_guid = guid del objeto por el cual se le asignan los puntos (si lo hay). Si no deberemos meter una descripción del mismo.
+$group_guid = guid del grupo (asignatura) en el que se le asignan
+$subgroup = boolean. Si se asignan a un subgrupo a true. $user_guid será el guid del subgrupo en este caso
+$description = string. Breve descripción de por qué son asignados los puntos. Queda reflejo en el detalle de los puntos: 'Puntos adjudicados por: $description'
+
+NOTA: Si al objeto representado por $entity_guid ya se le habían asignado puntos, simplemente se cambiarán los puntos del objeto 'gamepoint' ya existente.
+
+//Función para borrar un objeto de puntos de juego
+function gamepoints_remove($guid)
+
+//Devuelve la cantidad de puntos de un usuario en un grupo
+function gamepoints_get($user_guid, $group_guid = null)
+
+//Borra los objetos 'gamepoint' del usuario en dicho grupo.
+function gamepoints_reset_user($user_guid, $group_guid = null)
+
+//Función para actualizar los puntos de un objeto 'gamepoint' directamente
+function gamepoints_update($gamepoints_guid, $new_points)
+
+//Función que devuelve los puntos que le fueron asignados a un determinado objeto.
+function gamepoints_get_entity_points($entity_guid)
+
+//Función que devuelve el objeto de puntos que le fue asignado a un determinado objeto.
+function gamepoints_get_entity_points($entity_guid)
+
+//Función que borra los puntos pertenecientes a un objeto (Borrando su correspondiente objeto 'gamepoint'.)
+function gamepoints_remove_by_entity($entity_guid)
